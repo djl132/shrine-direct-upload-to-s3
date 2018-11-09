@@ -12,6 +12,7 @@ Shrine.storages = {
   store: Shrine::Storage::S3.new(prefix: "store", upload_options: {acl: "public-read"}, **s3_options),
 }
 
+# allows a way to get hte route for the presign key needed for direct uploading to AWS servers
 Shrine.plugin :activerecord
-Shrine.plugin :direct_upload
+Shrine.plugin :direct_upload 
 Shrine.plugin :restore_cached_data
